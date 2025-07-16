@@ -1,0 +1,22 @@
+MY_SECRET_KEY="yB2L5g52WOvZ4TQoRdu3"
+
+!pip install ultralytics
+!pip install roboflow
+
+
+import ultralytics
+from roboflow import Roboflow
+from ultralytics import YOLO
+from IPython.display import Image
+
+rf = Roboflow(api_key=MY_SECRET_KEY)
+project = rf.workspace("-jwzpw").project("continuous_fire")
+dataset = project.version(6).download("yolov8")
+
+
+# !yolo task=detect mode=train model=yolov8s.pt data=/content/continuous_fire-6/data.yaml epochs=1 imgsz=640 plots=True
+
+# !yolo task=detect mode=train model=yolov8s.pt data=/content/continuous_fire-6/data.yaml epochs=100 imgsz=640 batch=16 patience=20 plots=True
+
+
+!yolo task=detect mode=train model=yolov8n.pt data=/content/continuous_fire-6/data.yaml epochs=100 imgsz=640 batch=16 patience=20 plots=True
