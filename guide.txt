@@ -1,0 +1,6 @@
+Le premier lien (https://medium.com/@siromermer/object-detection-with-opencv-cascade-classifiers-f90d85b57403) 
+propose un modèle (.xml) et le code Python associé pour la détection de personnes. Vous pouvez l'utiliser tel quel. 
+Pour le tester, installez un environnement de développement comme VS Code ou PyCharm.
+
+Le second lien (https://docs.opencv.org/3.4/dc/d88/tutorial_traincascade.html)
+vous guidera pour créer votre propre modèle (.xml), par exemple pour la détection de panneaux de signalisation.
