@@ -21,6 +21,7 @@ dataset = project.version(6).download("yolov8")
 
 !yolo task=detect mode=train model=yolov8n.pt data=/content/continuous_fire-6/data.yaml epochs=100 imgsz=640 batch=16 patience=20 plots=True
 
+(NA9AS F size (280))
 
 
 #===================================== NEW COMMMANDS ===============================#
