@@ -1,10 +1,11 @@
 import json
 import os
 
-# https://universe.roboflow.com/fire-dataset-tp9jt/fire-detection-sejra/dataset/1
+# https://universe.roboflow.com/fire-dataset-tp9jt/fire-detection-sejra/dataset/1 (positive)
+# https://universe.roboflow.com/benjamin-stecker-bsf6l/kitchenod (negative)
 
 # === CONFIG ===
-coco_json_path = "_annotations.coco.json"  # Path to your COCO .json file
+coco_json_path = "train/_annotations.coco.json"  # Path to your COCO .json file
 image_dir = "positives"  # Path to your images folder (can be empty if not needed)
 output_txt_path = "positives.txt"  # Output file
 
@@ -39,3 +40,22 @@ with open(output_txt_path, 'w') as f:
         f.write(line + "\n")
 
 print(f"Saved: {output_txt_path}")
+
+
+
+# for negative images 
+
+# import os
+
+# # === CONFIG ===
+# negative_image_dir = "negative"  # Folder containing your negative images
+# output_txt_path = "negative.txt"  # Output path
+
+# # === COLLECT FILE PATHS ===
+# with open(output_txt_path, 'w') as f:
+#     for filename in os.listdir(negative_image_dir):
+#         if filename.lower().endswith(('.jpg', '.jpeg', '.png')):
+#             full_path = os.path.join(negative_image_dir, filename)
+#             f.write(full_path + '\n')
+
+# print(f"Saved: {output_txt_path}")
